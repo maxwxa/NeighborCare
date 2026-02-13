@@ -1,111 +1,211 @@
-/* =========================================
-   PATIENT WELCOME PAGE (HERO SECTION)
-   ========================================= */
+/* Dashboard Page Styles - Standardized with Appointments */
 
-/* Navigation Bar Fixes */
-.welcome-nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.5rem 5%;
-    background-color: #ffffff;
-    gap: 2rem;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-}
-
-.welcome-nav a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: #444;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.welcome-nav a:hover {
-    color: #0277bd; /* Uses the Primary Blue from your palette */
-}
-
-/* Hero Section Refinement */
-.welcome-hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 160px); /* Adjusted for nav and footer height */
-    gap: 4rem;
-    background-color: #ffffff;
-    padding: 2rem;
-}
-
-.hero-logo img {
-    height: 300px; /* Increased size for impact */
-    width: auto;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
-}
-
-.hero-text {
-    text-align: left;
-}
-
-.hero-text h1 {
-    font-size: 4.5rem; /* Balanced size */
-    line-height: 1.1;
+/* Reset and Base Styles */
+* {
     margin: 0;
-    color: #0277bd;
-    font-weight: 800;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero-text span {
-    display: block;
-    color: #e64a19; /* Accent Orange */
-    font-size: 6rem;
-    text-transform: uppercase;
-    letter-spacing: -2px;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Matched from appointments */
+    color: #333;
+    line-height: 1.6;
+    height: 100vh;
+    overflow-x: hidden;
 }
 
-/* Footer & Logout Fixes */
-.welcome-footer {
-    background-color: #f8fdfc; /* Very light teal tint */
+/* =========================================
+   1. GREETING ANIMATION OVERLAY
+   ========================================= */
+.greeting-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5; /* Matched to body bg */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: hideOverlay 0.8s 2.5s forwards ease-in-out;
+}
+
+.greeting-logo {
     height: 100px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: popIn 0.8s 0.2s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.greeting-text {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    color: #0288d1; /* Primary Blue */
+    opacity: 0;
+    transform: translateY(20px);
+    font-weight: bold;
+    animation: slideUpFade 0.8s 0.8s forwards ease-out;
+}
+
+.greeting-text span {
+    color: #f07d58; /* Coral/Orange */
+}
+
+/* =========================================
+   2. NAVBAR (Exact match to appointment.css)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    /* I removed the opacity and animation here so it loads instantly! */
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: 0 5%;
-    border-top: 1px solid #e0f2f1;
+    gap: 20px;
 }
 
-.btn-logout-large {
-    background-color: #0277bd;
-    border: none;
-    padding: 14px 50px;
-    border-radius: 50px; /* Rounded pill shape */
-    font-weight: 700;
+.nav-links a {
+    text-decoration: none;
+    color: #0288d1;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a.active {
+    background-color: #e8f5e9;
+    color: #f07d58;
+}
+
+.nav-links a:hover {
+    background-color: #b2ebf2;
+    color: #01579b;
+}
+
+.logout {
+    background-color: #e64a19;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout:hover {
+    background-color: #d84315;
+}
+
+.logout a {
+    color: white;
+    text-decoration: none;
+}
+/* =========================================
+   3. MAIN CONTENT (Announcements)
+   ========================================= */
+.content {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #f07d58;
+    margin: 0 0 30px 0;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideUpFade 0.6s 3.1s forwards ease-out;
+}
+
+.announcement-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px; /* Matched from appointments */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    opacity: 0;
+    animation: slideUpFade 0.6s 3.4s forwards ease-out;
+}
+
+.announcement-card h2 {
+    color: #0288d1;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.announcement-card p {
+    color: #555;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(2, 119, 189, 0.2);
 }
 
-.btn-logout-large:hover {
-    background-color: #01579b;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(2, 119, 189, 0.3);
+/* =========================================
+   4. ANIMATION KEYFRAMES & RESPONSIVE
+   ========================================= */
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* Mobile Responsive Adjustments */
+@keyframes slideUpFade {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes hideOverlay {
+    0% { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes slideDownNav {
+    0% { transform: translateY(-30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Rules from Appointments */
 @media (max-width: 768px) {
-    .welcome-hero {
+    .navbar {
         flex-direction: column;
-        text-align: center;
-        gap: 2rem;
+        padding: 10px 20px;
     }
-
-    .hero-text {
-        text-align: center;
+    .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
+    .content {
+        padding: 15px;
+        margin: 20px auto;
+    }
+}
 
-    .hero-text h1 { font-size: 3rem; }
-    .hero-text span { font-size: 4rem; }
-    .hero-logo img { height: 200px; }
+@media (max-width: 480px) {
+    .navbar { padding: 10px; }
+    .logo img { height: 40px; }
+    .nav-links a { padding: 8px 12px; font-size: 0.9rem; }
+    .logout { padding: 8px 15px; font-size: 0.9rem; }
+    .announcement-card { padding: 20px; }
 }

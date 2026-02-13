@@ -2,41 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeighborCare Login</title>
-    <link rel="stylesheet" href="../../css/common.css">
     <link rel="stylesheet" href="../../css/patient/login.css">
-    <link rel="icon" type="image/x-icon" href="../../Images/rooted in care.jpg" />
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <img src="../../Images/rooted in care.jpg" alt="Rooted in Care Logo">
-            <a>Rooted in Care</a>
+    <header class="top-nav">
+        <div class="logo-container">
+            <img src="/Images/TitleLogo.png" alt="NeighborCare Logo" class="logo-img">
         </div>
-    </div>
-
-    <div class="container">
-        <div class="left">
-            <h1>Welcome,<br><span>NeighborCare!</span></h1>
-            <p>From our roots to your health.</p>
-            <img src="../../Images/health.png" alt="Location Icon" class="location-icon">
-            <br>
-            <button class="back-btn"><a href="../../index.html">BACK</a></button>
-        </div>
-
-        <div class="right">
-            <div class="login-box">
-                <img src="../../Images/profile.png" alt="User Icon" class="user-icon">
-
-                <input type="text" placeholder="Enter username">
-                <input type="password" placeholder="Password">
-                <button><a href="patient.html">LOGIN</a></button>
-                <p>Don’t have an account? <a href="signup.html">Sign up</a></p>
+    </header>
+    <main class="main-container">
+        <section class="left-section">
+            <div class="hero-content">
+                <h1><span class="welcome">Welcome,</span><br><span class="neighborcare">NeighborCare!</span></h1>
+                <p>From our roots to your health.</p>
+                <img src="/Images/health.png" alt="Location Pin" class="location-image">
             </div>
-        </div>
-
-    </div>
-
+            <button class="back-button" onclick="window.location.href='../../index.html'">BACK</button>
+        </section>
+        <section class="right-section">
+            <div class="login-card">
+                <div class="avatar">
+                    <img src="/Images/Icons/PatientIcon.png" alt="User Avatar">
+                </div>
+                <form class="login-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+                <p class="footer-text">Don't have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
 

@@ -1,93 +1,205 @@
-/* Profile Page Styles */
+/* Profile Page Styles - Improved Modern Design */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0288d1;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a.active {
+    background-color: #e8f5e9;
+    color: #f07d58;
+}
+
+.nav-links a:hover {
+    background-color: #b2ebf2;
+    color: #01579b;
+}
+
+.logout {
+    background-color: #e64a19;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.logout:hover {
+    background-color: #d84315;
+}
+
+.logout a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Profile Layout */
 .profile-layout {
     display: flex;
-    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
     gap: 40px;
 }
 
+/* Profile Sidebar */
 .profile-sidebar {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 300px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
 }
 
 .profile-avatar img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 2px solid #e64a19;
+    border: 4px solid #f07d58;
     padding: 5px;
-    background-color: white;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    object-fit: cover;
 }
 
 .profile-sidebar h2 {
     color: #1a237e;
-    margin: 10px 0 5px 0;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
 }
 
 .profile-sidebar h3 {
-    color: #1a237e;
-    margin: 0 0 20px 0;
+    color: #666;
+    margin-bottom: 20px;
     font-weight: normal;
 }
 
 .sidebar-inputs {
     width: 100%;
+    margin-bottom: 20px;
 }
+
 .sidebar-inputs input {
     width: 100%;
+    padding: 12px;
     margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.sidebar-inputs input:focus {
+    border-color: #0288d1;
+    outline: none;
 }
 
 .save-btn {
-    background-color: #e0f2f1;
+    background-color: #b2dfdb;
     border: none;
-    padding: 10px 40px;
-    border-radius: 20px;
+    padding: 12px 30px;
+    border-radius: 25px;
     font-weight: bold;
-    color: #555;
-    margin-top: 10px;
+    color: #0288d1;
     cursor: pointer;
-    text-transform: uppercase;
-    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    width: 100%;
 }
 
+.save-btn:hover {
+    background-color: #81d4fa;
+}
+
+/* Details Container */
 .details-container {
-    flex: 3;
+    flex: 2;
     display: flex;
     gap: 20px;
 }
 
 .details-card {
     flex: 1;
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #f1f8e9;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #e8f5e9;
 }
 
 .card-title {
-    color: #e64a19;
-    margin-top: 0;
-    text-align: center;
+    color: #f07d58;
     margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.form-grid input, .form-grid textarea {
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: white;
-    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus,
+.form-grid select:focus {
+    border-color: #0288d1;
+    outline: none;
 }
 
 .half-row {
@@ -96,13 +208,17 @@
     align-items: center;
     margin-bottom: 10px;
 }
+
 .half-row label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #555;
     white-space: nowrap;
+    flex: 0 0 120px;
 }
+
 .half-row input {
     margin-bottom: 0;
+    flex: 1;
 }
 
 .address-box label {
@@ -111,7 +227,94 @@
     font-size: 0.9rem;
     color: #555;
 }
+
 .address-box textarea {
     height: 80px;
-    resize: none;
+    resize: vertical;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .profile-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-sidebar {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .details-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .details-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .profile-layout {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .profile-sidebar {
+        padding: 20px;
+    }
+
+    .details-card {
+        padding: 20px;
+    }
+
+    .half-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .half-row label {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-links a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .logout {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .profile-avatar img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
 }

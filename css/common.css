@@ -1,0 +1,264 @@
+/* =========================================
+   1. GLOBAL VARIABLES & SHARED STYLES
+   ========================================= */
+:root {
+    --primary-blue: #0277bd;
+    --dark-blue: #1a237e;
+    --teal: #00838f;
+    --primary-orange: #e64a19;
+    --light-orange: #ff7043;
+    --bg-light-green: #e8f5e9;
+    --bg-light-teal: #e0f2f1;
+    --text-dark: #333;
+    --text-grey: #555;
+    --border-color: #ddd;
+}
+
+    background-color: var(--bg-light-green);
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Base Content Container */
+.content {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Shared Headers */
+.content h1 {
+    font-size: 3rem;
+    color: var(--dark-blue);
+    margin-bottom: 30px;
+    font-family: 'Segoe UI Condensed', sans-serif;
+}
+
+/* =========================================
+   2. SHARED COMPONENTS (Modals & Forms)
+   ========================================= */
+/* Modals (Used in Appointment & Information) */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active { display: flex; }
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 30px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 5px solid white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 15px;
+    background-color: #ef5350;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Shared Input Fields */
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], select, textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* =========================================
+   3. LOGIN & SIGNUP PAGES
+   ========================================= */
+.container { display: flex; width: 100%; height: calc(100vh - 80px); }
+.left {
+    flex: 1; background-color: #f9f9f9;
+    display: flex; flex-direction: column; justify-content: center; padding-left: 80px;
+}
+.left h1 { font-size: 3.5rem; color: var(--teal); margin-bottom: 10px; }
+.left h1 span { color: #ef5350; }
+.right {
+    flex: 1; background-color: var(--bg-light-teal);
+    display: flex; justify-content: center; align-items: center;
+}
+.login-box {
+    background-color: #b2dfdb; padding: 40px; border-radius: 20px;
+    width: 350px; text-align: center; position: relative;
+}
+.user-icon { width: 80px; height: 80px; margin-bottom: 20px; }
+.login-box input { width: 100%; margin-bottom: 15px; }
+.login-box button, .btn-submit {
+    width: 100%; padding: 15px; background-color: var(--primary-orange);
+    color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;
+}
+.login-box button:hover, .btn-submit:hover { background-color: #d84315; }
+.login-box button a { color: white; display: block; text-decoration: none; }
+.login-box p a, .footer-text a { color: var(--primary-orange); font-weight: bold; }
+.location-icon { width: 150px; margin: 20px 0; }
+.back-btn { background-color: #ef9a9a; border: none; padding: 10px 40px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+.back-btn a { color: var(--text-grey); text-decoration: none; }
+
+/* Signup Specific */
+.signup-container {
+    background-color: #f0fdfa; min-height: calc(100vh - 80px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.signup-card {
+    background-color: var(--bg-light-teal); padding: 40px; border-radius: 20px;
+    width: 400px; text-align: center; border: 2px solid #b2ebf2;
+}
+.signup-card h1 { color: var(--teal); margin-bottom: 30px; }
+.input-group input { width: 100%; margin-bottom: 15px; }
+
+/* =========================================
+   4. PATIENT WELCOME (HOME)
+   ========================================= */
+.welcome-nav {
+    display: flex; justify-content: flex-end; padding: 20px 40px;
+    background-color: white; gap: 30px;
+}
+.welcome-nav a { font-size: 1.1rem; color: var(--text-dark); font-weight: 500; text-decoration: none; }
+.welcome-nav a:hover { color: var(--teal); }
+.welcome-hero {
+    display: flex; align-items: center; justify-content: center;
+    height: calc(100vh - 160px); gap: 50px; background-color: white;
+}
+.hero-logo img, .welcome-logo-container img { height: 250px; }
+.hero-text h1, .welcome-text-container h1 {
+    font-size: 8rem; line-height: 0.9; margin: 0; color: #0081b4; font-weight: 800;
+}
+.hero-text span, .welcome-text-container span {
+    display: block; color: var(--light-orange); font-size: 10rem; text-transform: uppercase;
+}
+.welcome-footer {
+    background-color: var(--bg-light-teal); height: 80px;
+    display: flex; align-items: center; justify-content: flex-end; padding: 0 40px;
+}
+.btn-logout-large {
+    background-color: #0081b4; border: none; padding: 12px 60px;
+    font-weight: bold; color: white; cursor: pointer; font-size: 1.1rem;
+}
+.btn-logout-large:hover { background-color: #005f87; }
+
+/* =========================================
+   5. DASHBOARD PAGES (Announcements, History, Info)
+   ========================================= */
+/* Announcements */
+.announcement-card {
+    background-color: white; border: 1px solid var(--border-color);
+    padding: 20px; text-align: left; max-width: 600px; margin: 0 auto 40px auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.announcement-card h3 { color: var(--dark-blue); margin: 0 0 5px 0; font-size: 1.5rem; }
+.announcement-card p { color: #888; margin: 0; font-size: 0.9rem; }
+.pagination { display: flex; justify-content: center; align-items: center; gap: 10px; }
+.page-box {
+    width: 30px; height: 30px; background-color: #81d4fa;
+    display: flex; align-items: center; justify-content: center; border-radius: 5px; font-weight: bold; color: white;
+}
+.next { font-size: 1.2rem; color: var(--text-grey); cursor: pointer; }
+
+/* History & Tables */
+.search-container { display: flex; justify-content: center; margin-bottom: 30px; gap: 10px; }
+.search-btn { background-color: white; border: 1px solid #ccc; padding: 10px 30px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+.search-input { width: 500px; max-width: 100%; }
+
+.history-table, .message-table, .appointments-table { margin: 0 auto; background-color: white; border-collapse: collapse; }
+.history-table th, .history-table td { padding: 15px; border: 1px solid #ccc; }
+
+.message-table { width: 100%; border: 2px solid var(--text-dark); }
+.message-table th, .message-table td { border: 2px solid var(--text-dark); padding: 15px; text-align: left; }
+.message-table th { background-color: #f5f5f5; text-align: center; }
+.date-time { text-align: center !important; font-weight: bold; color: var(--text-grey); }
+.message-modal-content { width: 500px; text-align: left; }
+.message-modal-content h2 { color: var(--dark-blue); margin-top: 0; }
+.message-body { margin: 20px 0; font-size: 1.1rem; color: var(--text-dark); }
+.message-footer { font-style: italic; color: var(--text-grey); text-align: right; margin-top: 30px; }
+
+/* =========================================
+   6. APPOINTMENTS PAGE
+   ========================================= */
+.page-header-container { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+.header-left { text-align: left; }
+.header-left h1 { font-size: 4rem; color: var(--light-orange); margin: 0 0 20px 0; }
+.create-btn {
+    background-color: white; border: 1px solid var(--text-dark); padding: 10px 25px;
+    font-size: 1.1rem; font-weight: bold; cursor: pointer; box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+.create-btn:hover { background-color: #f5f5f5; }
+
+.schedule-header { flex-grow: 1; display: flex; justify-content: flex-end; align-items: center; }
+.schedule-card {
+    background-color: white; padding: 20px 50px; border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; min-width: 300px;
+}
+.schedule-card h2 { font-size: 2rem; color: var(--light-orange); margin: 0 0 5px 0; font-family: 'Segoe UI Condensed', sans-serif; font-weight: normal; }
+.schedule-card p { color: var(--primary-blue); margin: 0; font-size: 1.5rem; font-weight: bold; }
+
+.appointments-table { border: 2px solid black; }
+.appointments-table th { background-color: var(--bg-light-green); color: var(--light-orange); border: 2px solid black; font-size: 1.1rem; padding: 15px; }
+.appointments-table td { border: 2px solid black; color: var(--primary-blue); font-weight: bold; padding: 15px; }
+
+/* Appointment Modal Tweaks */
+.appointment-form { display: flex; flex-direction: column; gap: 15px; }
+.form-group { display: flex; align-items: center; justify-content: space-between; }
+.form-group label { color: #26c6da; font-weight: bold; flex: 1; text-align: right; margin-right: 20px; }
+.form-group input, .form-group select, .form-group textarea { flex: 2; border: 1px solid #81c784; }
+.form-group textarea { resize: none; height: 60px; }
+.submit-btn { background-color: #9ccc65; color: white; border: none; padding: 10px 40px; border-radius: 20px; font-weight: bold; cursor: pointer; margin-top: 15px; font-size: 1.1rem; align-self: center; }
+
+/* =========================================
+   7. PROFILE PAGE
+   ========================================= */
+.profile-layout { display: flex; padding: 40px 5%; gap: 40px; text-align: left; }
+.profile-sidebar { flex: 1; display: flex; flex-direction: column; align-items: center; max-width: 300px; }
+.profile-avatar img { width: 150px; height: 150px; border-radius: 50%; border: 2px solid var(--primary-orange); padding: 5px; background-color: white; }
+.profile-sidebar h2 { color: var(--dark-blue); margin: 10px 0 5px 0; }
+.profile-sidebar h3 { color: var(--dark-blue); margin: 0 0 20px 0; font-weight: normal; }
+.sidebar-inputs { width: 100%; }
+.sidebar-inputs input { width: 100%; margin-bottom: 10px; background-color: white; border: none; }
+.save-btn { background-color: var(--bg-light-teal); border: none; padding: 10px 40px; border-radius: 20px; font-weight: bold; color: var(--text-grey); margin-top: 10px; cursor: pointer; font-size: 1.2rem; }
+
+.details-container { flex: 3; display: flex; gap: 20px; flex-wrap: wrap; }
+.details-card { flex: 1; min-width: 300px; background-color: #f1f8e9; border-radius: 20px; padding: 20px; border: 1px solid var(--border-color); }
+.card-title { color: var(--primary-orange); margin-top: 0; text-align: center; margin-bottom: 20px; font-size: 1.5rem;}
+.form-grid input, .form-grid textarea { width: 100%; margin-bottom: 10px; border: none; }
+.half-row { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+.half-row label { font-size: 0.8rem; color: var(--text-grey); white-space: nowrap; }
+.address-box label { display: block; margin-bottom: 5px; font-size: 0.9rem; color: var(--text-grey); }
+.address-box textarea { height: 80px; resize: none; }
+/* Copied from dashboard.css for unified design */
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background-color: #f0fdf4;
+     color: #333;
+     height: 100vh;
+     overflow-x: hidden;
+}
+
+/* ...rest of dashboard.css copied here... */
+/* Additional styles from dashboard.css would be added here */

@@ -1,96 +1,321 @@
-/* Login Page Styles */
-.container {
-    display: flex;
-    width: 100%;
-    height: calc(100vh - 80px);
+/* Copied from dashboard.css for unified design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.left {
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0fdf4;
+    color: #333;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ...rest of dashboard.css copied here... */
+/* Additional styles from dashboard.css would go here */
+
+/* Example styles */
+/* .header { */
+/*     background-color: #fff; */
+/*     padding: 20px; */
+/* } */
+
+/* Add more styles as needed */
+
+/* End of dashboard.css content */
+/* login.css - Complete CSS for NeighborCare Login Page */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Navbar */
+.top-nav {
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    /* Placeholder logo - replace with actual logo */
+}
+
+/* Main Container */
+.main-container {
     flex: 1;
-    background-color: #f9f9f9;
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* Left Section - Hero/Branding */
+.left-section {
+    flex: 1;
+    background-color: #e8f5e9;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 80px;
+    align-items: flex-start;
+    padding: clamp(2rem, 5%, 4rem);
+    position: relative;
 }
-.left h1 {
-    font-size: 3.5rem;
-    color: #00838f;
-    margin-bottom: 10px;
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
-.left h1 span {
-    color: #ef5350;
+
+.hero-content h1 .welcome {
+    color: #0288d1;
 }
-.right {
-    flex: 1;
-    background-color: #e0f2f1;
+
+.hero-content h1 .neighborcare {
+    color: #f07d58;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #0288d1;
+    margin-bottom: 2rem;
+}
+
+.location-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #b2ebf2;
+    color: #0288d1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #81d4fa;
+}
+/* Specific fix for the location icon */
+.location-image {
+    width: 150px;       /* Adjust this value to make it smaller or larger */
+    height: auto;        /* Maintains the original aspect ratio */
+    display: block;      /* Prevents extra spacing at the bottom */
+    margin: 20px 0;      /* Adds space above and below the image */
+}
+
+/* Right Section - Login Area */
+.right-section {
+    flex: 1.2;
+    background-color: #d1e9e7;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
-.login-box {
+
+/* Login Card */
+.login-card {
     background-color: #b2dfdb;
-    padding: 40px;
-    border-radius: 20px;
-    width: 350px;
-    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
     position: relative;
+    text-align: center;
 }
-.user-icon {
-    width: 80px;
-    height: 80px;
+
+/* Avatar */
+.avatar {
+    width: 140px;
+    height: 140px;
+    background-color: #ffffff;
+    border: 4px solid #f07d58;
+    border-radius: 50%;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Form Styles */
+.login-form {
+    margin-top: 80px; /* Space for avatar */
+}
+
+.input-group {
     margin-bottom: 20px;
 }
-.login-box input {
+
+input[type="text"],
+input[type="password"] {
     width: 100%;
-    padding: 15px;
+    padding: 15px 20px;
+    border-radius: 30px;
+    background-color: #ffffff;
     border: none;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
     font-size: 1rem;
+    outline: none;
 }
-.login-box button {
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999;
+}
+
+/* Login Button */
+.login-button {
     width: 100%;
-    padding: 15px;
     background-color: #e64a19;
-    color: white;
+    color: #ffffff;
     border: none;
+    padding: 15px;
     border-radius: 10px;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
-    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
 }
-.login-box button:hover {
+
+.login-button:hover {
     background-color: #d84315;
 }
-.login-box button a {
-    color: white;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-.login-box p {
-    margin-top: 20px;
+
+/* Footer Text */
+.footer-text {
     font-size: 0.9rem;
-}
-.login-box p a {
-    color: #e64a19;
-    font-weight: bold;
-}
-.location-icon {
-    width: 150px;
-    margin: 20px 0;
-}
-.back-btn {
-    background-color: #ef9a9a;
-    border: none;
-    padding: 10px 40px;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.back-btn a {
     color: #555;
-    font-size: 1rem;
+}
+
+.footer-text a {
+    color: #f07d58;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-section {
+        flex: none;
+        height: 50%;
+        padding: clamp(1rem, 5%, 2rem);
+    }
+
+    .right-section {
+        flex: none;
+        height: 50%;
+        padding: 10px;
+    }
+
+    .login-card {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        top: -50px;
+    }
+
+    .avatar img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .login-form {
+        margin-top: 60px;
+    }
+
+    .back-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 0 10px;
+    }
+
+    .logo-img {
+        height: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero-content p {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+
+    .location-image {
+        max-width: 80%;
+    }
+
+    .login-card {
+        border-radius: 20px;
+        padding: 20px 15px;
+    }
+
+    .input-group input {
+        padding: 12px 15px;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 1rem;
+    }
 }

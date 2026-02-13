@@ -1,52 +1,208 @@
-/* Signup Page Styles */
-.signup-container {
-    background-color: #f0fdfa;
-    min-height: calc(100vh - 80px);
+/* signup.css - Refined for a compact, professional fit */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Copied from dashboard.css for unified design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0fdf4;
+    color: #333;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ...rest of dashboard.css copied here... */
+/* 1. Header Navigation */
+/* 2. Main Layout Container */
+/* -----------------------------------------
+   LEFT SECTION (Branding)
+   ----------------------------------------- */
+/* -----------------------------------------
+   RIGHT SECTION (Form Area)
+   ----------------------------------------- */
+/* Signup Card - Vertically Compact */
+/* Floating Avatar */
+/* Form Styles */
+/* Primary Button */
+/* Short Screen Fix (Laptops) */
+}
+
+/* 1. Header Navigation */
+.top-nav {
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+/* 2. Main Layout Container */
+.main-container {
+    flex: 1;
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+/* -----------------------------------------
+   LEFT SECTION (Branding)
+   ----------------------------------------- */
+.left-section {
+    flex: 1;
+    background-color: #e8f5e9;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    padding: 0 8%;
+    position: relative;
 }
-.signup-card {
-    background-color: #e0f2f1;
-    padding: 40px;
-    border-radius: 20px;
-    width: 400px;
-    text-align: center;
-    border: 2px solid #b2ebf2;
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
 }
-.signup-card h1 {
-    color: #00838f;
-    margin-bottom: 30px;
+
+.hero-content h1 .welcome { color: #0288d1; }
+.hero-content h1 .neighborcare { color: #f07d58; }
+
+.hero-content p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #0288d1;
+    margin: 8px 0;
 }
-.input-group input {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    font-size: 1rem;
+
+.location-image {
+    width: clamp(100px, 18vw, 180px); /* Scaled down for better fit */
+    height: auto;
+    margin-top: 10px;
 }
-.btn-submit {
-    width: 100%;
-    padding: 15px;
-    background-color: #e64a19;
-    color: white;
+
+.back-button {
+    position: absolute;
+    bottom: 25px;
+    left: 8%;
+    background-color: #b2ebf2;
+    color: #546e7a;
     border: none;
+    padding: 10px 30px;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
 }
-.btn-submit:hover {
-    background-color: #d84315;
+
+/* -----------------------------------------
+   RIGHT SECTION (Form Area)
+   ----------------------------------------- */
+.right-section {
+    flex: 1.2;
+    background-color: #d1e9e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
+
+/* Signup Card - Vertically Compact */
+.signup-card {
+    background-color: #b2dfdb;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 30px 35px; /* Balanced inner spacing */
+    position: relative;
+    text-align: center;
+    max-height: 90vh; /* Keeps card from growing off-screen */
+}
+
+/* Floating Avatar */
+.avatar {
+    width: 120px;
+    height: 120px;
+    background-color: #ffffff;
+    border: 4px solid #f07d58;
+    border-radius: 50%;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.avatar img {
+    width: 80%;
+    height: auto;
+}
+
+/* Form Styles */
+.signup-form {
+    margin-top: 60px; /* Reduced to fit all inputs */
+}
+
+.input-group {
+    margin-bottom: 12px; /* Tightened vertical gap */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    border: none;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+/* Primary Button */
+.signup-button {
+    width: 100%;
+    background-color: #e64a19;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0 15px 0;
+}
+
 .footer-text {
-    margin-top: 20px;
     font-size: 0.9rem;
-    color: #555;
+    color: #546e7a;
 }
+
 .footer-text a {
     color: #e64a19;
     font-weight: bold;
+    text-decoration: none;
+}
+
+/* Short Screen Fix (Laptops) */
+@media (max-height: 750px) {
+    .signup-card { padding: 25px 30px; }
+    .avatar { width: 100px; height: 100px; top: -50px; }
+    .signup-form { margin-top: 50px; }
+    .input-group { margin-bottom: 8px; }
 }

@@ -2,47 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rooted in Care</title>
-    <link rel="stylesheet" href="../../css/common.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeighborCare Signup</title>
     <link rel="stylesheet" href="../../css/patient/signup.css">
-    <link rel="icon" type="image/x-icon" href="../../Images/rooted in care.jpg" />
+    <link rel="icon" type="image/x-icon" href="../../Images/Logo.png" />
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <img src="../../Images/rooted in care.jpg" alt="Rooted in Care Logo">
-            <a>Rooted in Care</a>
+    <header class="top-nav">
+        <div class="logo-container">
+            <img src="/Images/TitleLogo.png" alt="NeighborCare Logo" class="logo-img">
         </div>
-    </div>
-
-    <div class="signup-container">
-        <div class="signup-card">
-            <h1>SIGN UP</h1>
-            
-            <form>
-                <div class="input-group">
-                    <input type="text" placeholder="Username" required>
+    </header>
+    <main class="main-container">
+        <section class="left-section">
+            <div class="hero-content">
+                <h1><span class="welcome">Welcome,</span><br><span class="neighborcare">NeighborCare!</span></h1>
+                <p>Start consulting by creating an account.</p>
+                <img src="/Images/health.png" alt="Location Pin" class="location-image">
+            </div>
+        </section>
+        <section class="right-section">
+            <div class="signup-card">
+                <div class="avatar">
+                    <img src="/Images/Icons/PatientIcon.png" alt="User Avatar">
                 </div>
-                <div class="input-group">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <div class="input-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="input-group">
-                    <input type="tel" placeholder="Contact No." required>
-                </div>
-                
-                <button type="submit" class="btn-submit">Create Account</button>
-            </form>
-
-            <p class="footer-text">
-                Already have an account? <a href="login.html">Login</a>
-            </p>
-        </div>
-    </div>
-
+                <form class="signup-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" placeholder="Contact No." required>
+                    </div>
+                    <button type="submit" class="signup-button">Create Account</button>
+                </form>
+                <p class="footer-text">Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
-
-<!-- patient to man -->

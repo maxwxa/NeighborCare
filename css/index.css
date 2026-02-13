@@ -1,0 +1,336 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Copied from dashboard.css for unified design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0fdf4;
+    color: #333;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ...rest of dashboard.css copied here... */
+/* Header */
+.top-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Main Content */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Portal Container */
+.portal-container {
+    background-color: #e8f5e9;
+    border-radius: 24px;
+    padding: 60px 80px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Portal Links */
+.portal-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portal-link:hover {
+    transform: translateY(-10px);
+}
+
+/* Icon Circles */
+.icon-circle {
+    background-color: #ffffff;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.portal-link:hover .icon-circle {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
+}
+
+.icon-circle img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Portal Text */
+.portal-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .portal-container {
+        padding: 50px 60px;
+        gap: 50px;
+    }
+
+    .icon-circle {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 10px 20px;
+        height: 60px;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .content-wrapper {
+        padding: 20px 10px;
+    }
+
+    .portal-container {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 40px;
+        max-width: 90%;
+    }
+
+    .icon-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .portal-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 10px 15px;
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+
+    .portal-container {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .icon-circle {
+        width: 140px;
+        height: 140px;
+    }
+
+    .portal-text {
+        font-size: 1.2rem;
+    }
+}
+}
+
+/* Header */
+.top-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Main Content */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Portal Container */
+.portal-container {
+    background-color: #e8f5e9;
+    border-radius: 24px;
+    padding: 60px 80px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Portal Links */
+.portal-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portal-link:hover {
+    transform: translateY(-10px);
+}
+
+/* Icon Circles */
+.icon-circle {
+    background-color: #ffffff;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.portal-link:hover .icon-circle {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    transform: scale(1.05);
+}
+
+.icon-circle img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Portal Text */
+.portal-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .portal-container {
+        padding: 50px 60px;
+        gap: 50px;
+    }
+
+    .icon-circle {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 10px 20px;
+        height: 60px;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .content-wrapper {
+        padding: 20px 10px;
+    }
+
+    .portal-container {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 40px;
+        max-width: 90%;
+    }
+
+    .icon-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .portal-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 10px 15px;
+    }
+
+    .logo-img {
+        height: 35px;
+    }
+
+    .portal-container {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .icon-circle {
+        width: 140px;
+        height: 140px;
+    }
+
+    .portal-text {
+        font-size: 1.2rem;
+    }
+}
