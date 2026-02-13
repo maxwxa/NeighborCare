@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rooted in Care</title>
+        <link rel="stylesheet" href="../../css/common.css">
+        <link rel="stylesheet" href="../../css/patient/information.css">
+    <link rel="icon" type="image/x-icon" href="../../Images/rooted in care.jpg" />
+</head>
+<body>
+
+    <div class="navbar">
+    <div class="logo">
+       <img src="../../Images/rooted in care.jpg" alt="rooted in care">
+    </div>
+
+    <div class="nav-links">
+      <a href="patient.html">Home</a>
+      <a href="appointment.html">Appointments</a>
+      <a href="information.html" class="active">Information</a>
+      <a href="profile.html">Profile</a>
+      <a href="history.html">History</a>
+      <button class="logout"><a href="../../index.html">Logout</a></button>
+    </div>
+</div>
+
+    <div class="content">
+        <h1>Messages</h1>
+
+        <table class="message-table">
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th colspan="2">INBOX</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="openMessageModal()">
+                    <td class="date-time">February 8, 2026<br>3:00pm</td>
+                    <td>Dr. Jessalyn - Pediatrician<br>Marikina City</td>
+                    <td>Subject:</td>
+                </tr>
+                <tr>
+                    <td class="date-time">&nbsp;</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="date-time">&nbsp;</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-overlay" id="messageModal">
+        <div class="modal-content message-modal-content">
+            <button class="close-btn" onclick="closeMessageModal()">X</button>
+
+            <h2>Subject :</h2>
+            
+            <div class="message-body">
+                “Dear, User you have been diagnosed with UTI”
+            </div>
+
+            <div class="message-footer">
+                -Dr. Jessalyn (Pediatrician from Marikina City)
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openMessageModal() {
+            document.getElementById('messageModal').classList.add('active');
+        }
+        function closeMessageModal() {
+            document.getElementById('messageModal').classList.remove('active');
+        }
+    </script>
+
+    </body>
+</html>
+
+<!-- patient to man -->

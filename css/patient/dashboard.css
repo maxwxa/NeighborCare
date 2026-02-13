@@ -1,0 +1,111 @@
+/* =========================================
+   PATIENT WELCOME PAGE (HERO SECTION)
+   ========================================= */
+
+/* Navigation Bar Fixes */
+.welcome-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem 5%;
+    background-color: #ffffff;
+    gap: 2rem;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.welcome-nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #444;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.welcome-nav a:hover {
+    color: #0277bd; /* Uses the Primary Blue from your palette */
+}
+
+/* Hero Section Refinement */
+.welcome-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px); /* Adjusted for nav and footer height */
+    gap: 4rem;
+    background-color: #ffffff;
+    padding: 2rem;
+}
+
+.hero-logo img {
+    height: 300px; /* Increased size for impact */
+    width: auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 4.5rem; /* Balanced size */
+    line-height: 1.1;
+    margin: 0;
+    color: #0277bd;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero-text span {
+    display: block;
+    color: #e64a19; /* Accent Orange */
+    font-size: 6rem;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+/* Footer & Logout Fixes */
+.welcome-footer {
+    background-color: #f8fdfc; /* Very light teal tint */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5%;
+    border-top: 1px solid #e0f2f1;
+}
+
+.btn-logout-large {
+    background-color: #0277bd;
+    border: none;
+    padding: 14px 50px;
+    border-radius: 50px; /* Rounded pill shape */
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(2, 119, 189, 0.2);
+}
+
+.btn-logout-large:hover {
+    background-color: #01579b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(2, 119, 189, 0.3);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .welcome-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 { font-size: 3rem; }
+    .hero-text span { font-size: 4rem; }
+    .hero-logo img { height: 200px; }
+}

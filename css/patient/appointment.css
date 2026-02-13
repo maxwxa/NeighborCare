@@ -1,0 +1,204 @@
+/* Appointments Page Styles */
+body {
+    background-color: #e8f5e9; 
+}
+
+.content {
+    padding: 40px 5%;
+    max-width: 1400px; 
+    margin: 0 auto;
+}
+
+.page-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.header-left {
+    text-align: left;
+}
+
+.content h1 {
+    font-size: 4rem;
+    color: #ff7043; 
+    margin: 0 0 20px 0;
+    font-family: 'Segoe UI Condensed', 'Impact', sans-serif;
+    letter-spacing: 1px;
+}
+
+.create-btn {
+    background-color: white;
+    border: 1px solid #333;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+.create-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.schedule-header {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.schedule-card {
+    background-color: white;
+    padding: 20px 50px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    min-width: 300px;
+}
+
+.schedule-card h2 {
+    font-size: 2rem;
+    color: #ff7043; 
+    margin: 0 0 5px 0;
+    font-weight: normal;
+    font-family: 'Segoe UI Condensed', sans-serif;
+}
+
+.schedule-card p {
+    color: #0277bd; 
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.appointments-table {
+    margin: 0 auto;
+    border: 2px solid black;
+    background-color: white; 
+}
+
+.appointments-table th {
+    background-color: #e8f5e9; 
+    color: #ff7043; 
+    border: 2px solid black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.appointments-table td {
+    border: 2px solid black;
+    color: #0277bd; 
+    font-weight: bold;
+    padding: 15px;
+    background-color: white;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 30px; 
+    width: 400px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    border: 5px solid white; 
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ef5350;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.modal-content h2 {
+    color: #ff7043; 
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-family: 'Segoe UI Condensed', sans-serif;
+}
+
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group label {
+    color: #26c6da; 
+    font-weight: bold;
+    flex: 1;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    flex: 2;
+    padding: 8px 10px;
+    border: 1px solid #81c784; 
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    color: #555;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 60px;
+}
+
+.submit-btn {
+    background-color: #9ccc65; 
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    align-self: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.submit-btn:hover {
+    background-color: #8bc34a;
+}
